@@ -1,0 +1,123 @@
+{
+  "A": {
+    "test": {
+      "question_count": 5,
+      "hit_at_1": {
+        "successes": 2,
+        "total": 5,
+        "rate": 0.4
+      },
+      "evidence_hit_at_3": {
+        "successes": 2,
+        "total": 5,
+        "rate": 0.4
+      },
+      "metadata_traceability": {
+        "successes": 15,
+        "total": 15,
+        "rate": 1.0
+      },
+      "filter_compliance": {
+        "successes": 0,
+        "total": 0,
+        "rate": null
+      }
+    }
+  },
+  "B": {
+    "test": {
+      "question_count": 5,
+      "hit_at_1": {
+        "successes": 1,
+        "total": 5,
+        "rate": 0.2
+      },
+      "evidence_hit_at_3": {
+        "successes": 2,
+        "total": 5,
+        "rate": 0.4
+      },
+      "metadata_traceability": {
+        "successes": 15,
+        "total": 15,
+        "rate": 1.0
+      },
+      "filter_compliance": {
+        "successes": 0,
+        "total": 0,
+        "rate": null
+      }
+    }
+  },
+  "C": {
+    "test": {
+      "question_count": 5,
+      "hit_at_1": {
+        "successes": 1,
+        "total": 5,
+        "rate": 0.2
+      },
+      "evidence_hit_at_3": {
+        "successes": 2,
+        "total": 5,
+        "rate": 0.4
+      },
+      "metadata_traceability": {
+        "successes": 15,
+        "total": 15,
+        "rate": 1.0
+      },
+      "filter_compliance": {
+        "successes": 3,
+        "total": 3,
+        "rate": 1.0
+      }
+    }
+  },
+  "run": {
+    "split": "test",
+    "selected_content_pages": 153,
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "embedding_dimensions": 384,
+    "search": "exact cosine similarity via pgvector",
+    "model_load_seconds": 10.120670700001938,
+    "query_embedding_seconds": 0.2286673999951745,
+    "strategies": {
+      "A": {
+        "chunk_count": 1015,
+        "chunk_characters": {
+          "min": 52,
+          "mean": 464.5320197044335,
+          "max": 500
+        },
+        "embedding_seconds": 79.08187299999918,
+        "upsert_seconds": 0.9348382999996829,
+        "vectors_reused_from": null
+      },
+      "B": {
+        "chunk_count": 987,
+        "chunk_characters": {
+          "min": 11,
+          "mean": 433.47821681864235,
+          "max": 500
+        },
+        "embedding_seconds": 79.67218929999945,
+        "upsert_seconds": 0.9169349000003422,
+        "vectors_reused_from": null
+      },
+      "C": {
+        "chunk_count": 987,
+        "chunk_characters": {
+          "min": 11,
+          "mean": 433.47821681864235,
+          "max": 500
+        },
+        "embedding_seconds": 0.0,
+        "upsert_seconds": 0.6979584999971848,
+        "vectors_reused_from": "B"
+      }
+    },
+    "source_attribution": "Adapted from Pradhan et al. (2026), Demographic Change in South Asia: From Tailwinds to Headwinds for Development, World Bank, https://doi.org/10.1596/978-1-4648-0959-0, CC BY 3.0 IGO.",
+    "automated_metrics_note": "String-based evidence matching is a retrieval proxy only; chunk coherence and grounding quality require manual scoring."
+  }
+}

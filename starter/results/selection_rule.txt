@@ -1,0 +1,20 @@
+Selection rule recorded before running the held-out test split
+Date: 2026-11-13
+
+Use the dev split only to choose the operating configuration. First compare
+Evidence Hit@3; if tied, prefer the configuration that supports and complies
+with question-provided metadata filters when those filters are needed. If the
+filter capability is not needed, use measured runtime and storage cost to break
+the tie. Do not change chunking, model, filters, or other settings based on
+test results.
+
+Dev evidence:
+- A: Evidence Hit@3 = 6/15; Hit@1 = 5/15.
+- B: Evidence Hit@3 = 8/15; Hit@1 = 4/15.
+- C: Evidence Hit@3 = 8/15; Hit@1 = 4/15; filter compliance = 5/5 filtered
+  questions.
+
+The dev results tie B and C on Evidence Hit@3. Use C when question-provided
+section filters are needed because it supports those filters and complied on
+all filtered dev questions. For queries without a filter, C uses the same
+chunks and vectors as B, so the filter does not change those results.
